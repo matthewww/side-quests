@@ -1,4 +1,4 @@
-# Audiobook Normalization Script
+# Audiobook Normalizer
 
 This script provides a suite of tools for organizing and normalizing a collection of audiobooks. It is designed to be run from the command line and can process multiple audiobook formats, automatically handling file conversions, metadata, and cover art.
 
