@@ -15,7 +15,7 @@ This script provides a suite of tools for organizing and normalizing a collectio
 To use the script, simply run it from your terminal:
 
 ```bash
-python normalize_audiobooks.py
+python normalize-audiobooks.py
 ```
 
 The script will automatically scan the `audiobooks` subdirectory for audiobook folders, process them, and place the final `.m4b` files in the `normalized_audiobooks` directory.
