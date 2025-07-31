@@ -1,6 +1,7 @@
 # Side Quests
 
 This repo is a collection of small projects, mostly created by lightly guiding overenthusiastic agentic tools. 
+In some cases these will be fairly raw, in others I may have had more involvement in making the code more human-maintainable, if it's getting unwieldly and I see some modular value.
 
 | Project | Description | Human Involvement |
 |---|---|---|
