@@ -38,6 +38,7 @@ void loop() {
       Serial.println(lives);
       
       if (lives == 0) {
+        delay(800);
         gameOver();
       }
     }
@@ -59,7 +60,7 @@ bool checkButtonPress() {
 
 void loseLife() {
   int ledIndex = 3 - lives;
-  
+
   for (int i = 0; i < 3; i++) {
     tone(PIEZO_PIN, LIFE_LOST_FREQ[i], 200);
     digitalWrite(LED_PINS[ledIndex], LOW);
@@ -68,11 +69,13 @@ void loseLife() {
     delay(80);
   }
   
-  for (int i = 0; i < 6; i++) {
-    digitalWrite(LED_PINS[ledIndex], i % 2);
-    delay(100);
-  }
-  
+  // int tinkle[] = {1047, 1319};
+  // for (int i = 0; i < 8; i++) { 
+  //     digitalWrite(LED_PINS[ledIndex], i % 2);
+  //     tone(PIEZO_PIN, tinkle[i % 2], 150);
+  //     delay(50);
+  // }
+
   digitalWrite(LED_PINS[ledIndex], LOW);
   noTone(PIEZO_PIN);
 }
@@ -98,7 +101,7 @@ void resetGame() {
   lives = 3;
   
   int startDurations[] = {150, 150, 150, 200, 150, 150, 300};
-  
+    
   for (int i = 0; i < 3; i++) {
     digitalWrite(LED_PINS[i], HIGH);
     tone(PIEZO_PIN, GAME_START_FREQ[i], startDurations[i]);
