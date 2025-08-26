@@ -1,12 +1,10 @@
 
-// --- Configurable Constants ---
 const int LED_PINS[] = {9, 10, 11}; // Anode (220 res to ground)
 const int NUM_LEDS = 3;
 const int BUTTON_PIN = 2;
 const int PIEZO_PIN = 8;
-
 const int INITIAL_LIVES = 3;
-const unsigned long DEBOUNCE_DELAY = 250;
+const unsigned long DEBOUNCE_DELAY = 50;
 
 const int LIFE_LOST_FREQ[] = {659, 523, 330};
 const int GAME_OVER_FREQ[] = {523, 494, 466, 440, 415, 392};
@@ -14,14 +12,11 @@ const int GAME_OVER_DURATIONS[] = {300, 300, 300, 300, 400, 800};
 const int GAME_START_FREQ[] = {659, 659, 659, 523, 784, 698, 659};
 const int GAME_START_DURATIONS[] = {150, 150, 150, 200, 150, 150, 300};
 const int POWER_UP_FREQ[] = {1047, 1175, 1319, 1397, 1568, 1760, 1976};
-
 const int LIFE_LOST_TONE_DURATION = 200;
 const int LIFE_LOST_LED_ON_DELAY = 120;
 const int LIFE_LOST_LED_OFF_DELAY = 80;
-
 const int GAME_OVER_WAIT_MS = 5000;
 const int GAME_START_LED_COUNT = 3;
-
 const int POWER_UP_TONE_DURATION = 80;
 const int POWER_UP_TONE_DELAY = 90;
 
@@ -31,6 +26,7 @@ bool lastButtonState = HIGH;
 bool buttonPressed = false;
 unsigned long lastDebounceTime = 0; 
 
+// Initializes hardware, sets pin modes, starts serial, and plays the game start sound.
 void setup() {
   for (int i = 0; i < NUM_LEDS; i++) {
     pinMode(LED_PINS[i], OUTPUT);
@@ -43,6 +39,7 @@ void setup() {
   Serial.println("Game Started!");
 }
 
+// Main game loop: checks for button press, handles life loss, and triggers game over.
 void loop() {
   if (checkButtonPress()) {
     if (lives > 0) {
@@ -59,6 +56,7 @@ void loop() {
   }
 }
 
+// Checks if the button was pressed with debounce logic.
 bool checkButtonPress() {
   bool currentButtonState = digitalRead(BUTTON_PIN);
   
@@ -72,6 +70,7 @@ bool checkButtonPress() {
   return false;
 }
 
+// Handles losing a life: plays sound, blinks LED, and updates state.
 void loseLife() {
   int ledIndex = NUM_LEDS - lives;
   for (int i = 0; i < NUM_LEDS; i++) {
@@ -85,6 +84,7 @@ void loseLife() {
   noTone(PIEZO_PIN);
 }
 
+// Handles game over: plays sound sequence, waits, and resets the game.
 void gameOver() {
   Serial.println("Game Over!");
   for (int i = 0; i < 6; i++) {
@@ -96,6 +96,7 @@ void gameOver() {
   resetGame();
 }
 
+// Resets the game state and LEDs, and plays the game start sound sequence.
 void resetGame() {
   Serial.println("Game Reset!");
   lives = INITIAL_LIVES;
@@ -112,6 +113,7 @@ void resetGame() {
   Serial.println("Ready to play again!");
 }
 
+// Plays the power-up sound sequence at the start of the game.
 void playGameStartSound() {
   for (int i = 0; i < 7; i++) {
     tone(PIEZO_PIN, POWER_UP_FREQ[i], POWER_UP_TONE_DURATION);
