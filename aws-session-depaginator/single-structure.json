@@ -1,0 +1,60 @@
+{
+    "item": {
+        "id": "events-cards-interactive-emea-event-agenda#summit-johannesburg-2025-ois201",
+        "locale": "en_US",
+        "directoryId": "events-cards-interactive-emea-event-agenda",
+        "name": "summit-johannesburg-2025-OIS201",
+        "dateCreated": "2025-07-31T10:02:46+0000",
+        "dateUpdated": "2025-08-15T10:07:33+0000",
+        "additionalFields": {
+            "badge": "{\"value\":[\"Breakout Session\"]}",
+            "heading": "OIS201",
+            "level": "intermediate",
+            "language": "English",
+            "location": "Breakout 16",
+            "title": "AWS security at scale: From development to production",
+            "body": "Lee Moodley, Snr Solutions Architect, AWS | Recep Meric Degirmenci, Specialist Security Solutions Architect, AWS <br> 12:00 - 12:45",
+            "ctaLink": "#",
+            "ctaLabel": "OIS201",
+            "bodyBack": "Discover how to enhance your cloud security posture across the entire development and production lifecycle. This session explores the AWS comprehensive security approach, covering identification, prevention, detection, response, and remediation. Learn to integrate security-by-design principles throughout your development process and use advanced detection and response capabilities. Explore how generative AI enhances security analysis and automates operations. Gain insights into building resilient architectures that evolve with emerging threats, enabling you to create more secure, scalable cloud environments."
+        }
+    },
+    "tags": [
+        {
+            "id": "GLOBAL#aws-language#english",
+            "locale": "en_US",
+            "tagNamespaceId": "GLOBAL#aws-language",
+            "name": "english",
+            "description": "description placeholder",
+            "dateCreated": "2025-05-05T21:28:25+0000",
+            "dateUpdated": "2025-05-05T21:28:25+0000"
+        },
+        {
+            "id": "GLOBAL#local-tags-emea-event-agenda-event-name#summit-johannesburg-2025",
+            "locale": "en_US",
+            "tagNamespaceId": "GLOBAL#local-tags-emea-event-agenda-event-name",
+            "name": "summit-johannesburg-2025",
+            "description": "description placeholder",
+            "dateCreated": "2025-05-01T17:28:51+0000",
+            "dateUpdated": "2025-05-01T17:28:51+0000"
+        },
+        {
+            "id": "GLOBAL#aws-level#200",
+            "locale": "en_US",
+            "tagNamespaceId": "GLOBAL#aws-level",
+            "name": "200",
+            "description": "description placeholder",
+            "dateCreated": "2025-05-05T21:27:23+0000",
+            "dateUpdated": "2025-05-05T21:27:23+0000"
+        },
+        {
+            "id": "GLOBAL#local-tags-emea-event-agenda-session-type#breakout-session",
+            "locale": "en_US",
+            "tagNamespaceId": "GLOBAL#local-tags-emea-event-agenda-session-type",
+            "name": "Breakout Session",
+            "description": "description placeholder",
+            "dateCreated": "2025-05-13T17:16:12+0000",
+            "dateUpdated": "2025-07-18T16:34:14+0000"
+        }
+    ]
+}
